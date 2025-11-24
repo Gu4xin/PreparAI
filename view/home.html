@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="stylesheet" href=" styles/styles.css">
+        <link rel="stylesheet" href="styles/styles-home.css">
+        <link rel="stylesheet" href="styles/styles-chat.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="img/book_711189.png">
+        <script src="../controller/chat.js"></script>
+    </head>
+
+    <body class="home-page">
+        <header id="main-header">
+            <div class="page-header">
+                <img src="img/PreparAI.png" alt="Logo do site" class="header-logo">
+            </div>
+
+            <div class="profile-header"> 
+                <img src="img/perfil.png" alt="perfil" class="header-perfil">
+            </div>
+
+            <nav id="menu">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+                <div class="nav-mobile">
+                    <a href="#">Chat1</a>
+                    <a href="#">Chat2</a>
+                    <a href="#">Chat3</a>
+                    <a href="#">Chat4</a>
+                </div>
+            </nav>
+
+            <script>
+                (function(){
+                    const check = document.getElementById('check');
+                    const navMobile = document.querySelector('.nav-mobile');
+                    if (!navMobile || !check) return;
+                    function updateNav(){
+                        navMobile.style.display = check.checked ? 'block' : 'none';
+                    }
+                    // inicializa o estado correto (escondido por padrão)
+                    updateNav();
+                    // atualiza quando o checkbox mudar
+                    check.addEventListener('change', updateNav);
+                })();
+            </script>
+
+            <div id="navigation-links">
+                <a href="home.html">INÍCIO</a>  
+                <a href="simulado.html">SIMULADO</a>
+                <a href="desempenho.html">DESEMPENHO</a>
+            </div>
+        </header>
+
+        
+        <main class="home-container">
+            <h1>PreparAI</h1>
+            
+            <div class="chat-area">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Mensagens aparecerão aqui -->
+                </div>
+                
+                <div class="chat-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        class="chat-input" 
+                        placeholder="Digite sua pergunta..."
+                        aria-label="Digite sua mensagem"
+                    >
+                    <button id="sendBtn" class="send-btn" title="Enviar mensagem">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Este é um projeto de faculdade. Se quiser saber mais clique
+            <a href="A colocar">aqui</a></p>
+        </footer>
+
+
+        <a href="index.html">Debug</a>
+    </body>
+</html>
