@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado</title>
+    <link rel="stylesheet" href="Styles/styles-simulado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="practice-page">
+    <header class="page-header">
+        <img src="photos/enemlogobranco.png" alt="Logo do site" class="header-logo">
+    </header>
+
+    <header class="profile-header">
+        <img src="photos/perfil.png" alt="perfil" class="header-perfil">
+    </header>
+
+    <nav id="menu">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <div class="nav-mobile">
+            <a href="#">Chat1</a>
+            <a href="#">Chat2</a>
+            <a href="#">Chat3</a>
+            <a href="#">Chat4</a>
+        </div>
+    </nav>
+
+    <script>
+        (function(){
+            const check = document.getElementById('check');
+            const navMobile = document.querySelector('.nav-mobile');
+            if (!navMobile || !check) return;
+            function updateNav(){
+                navMobile.style.display = check.checked ? 'block' : 'none';
+            }
+            // inicializa o estado correto (escondido por padrão)
+            updateNav();
+            // atualiza quando o checkbox mudar
+            check.addEventListener('change', updateNav);
+        })();
+    </script>
+
+    <header id="navigation-links">
+        <a href="home.html">INÍCIO</a>
+        <a href="simulado.html">SIMULADO</a>
+        <a href="desempenho.html">DESEMPENHO</a>
+    </header>
+
+
+    <main class="home-container">
+        <h1>Simulado</h1>
+
+        <section class="simulado-content">
+            <h2>O simulado acontece aqui.</h2>
+        </section>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <p>Este é um projeto de faculdade. Se quiser saber mais clique
+                <a href="A colocar">aqui</a>
+            </p>
+        </footer>
+
+    </main>
+    </body>
+</html>
