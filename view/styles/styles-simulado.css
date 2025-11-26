@@ -1,186 +1,97 @@
-nav {
-    padding: 1.5rem 2rem;
-    background-color: #1d4e98;
-    color: #fff;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 100;
-    border-radius: 50%;
-    width: auto;
-    padding: 0;
+/* Estilos básicos para os cartões de pergunta (placeholder) */
+.simulado-container {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 1.5rem;
 }
 
-.page-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem 2rem;
-    background-color: #1d4e98;
+.questions-controls {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 1rem;
 }
 
-.header-logo {
-    max-width: 100px;
-    height: auto;
-    object-fit: contain;
+.questions-area {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 1rem;
 }
 
-.profile-header {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 100;
+.question-card {
+	background: #fff;
+	border-radius: 8px;
+	padding: 1rem;
+	box-shadow: 0 6px 18px rgba(13,38,76,0.06);
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
-.header-perfil {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #1d4e98;
-    cursor: pointer;
+.question-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.checkbtn {
-    font-weight: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
+.question-title {
+	margin: 0;
+	font-size: 1.05rem;
+	color: #1d4e98;
 }
 
-#check {
-    display: none;
+.question-text {
+	margin: 0;
+	color: #333;
 }
 
-.nav-mobile {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background: #1d4e98;
-    z-index: 999;
-    width: 200px;
-    border-radius: 8px;
-    margin-top: 0.5rem;
+.options-list {
+	list-style: none;
+	padding: 0;
+	margin: 0.5rem 0 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
-#check:checked ~ .nav-mobile {
-    display: block;
+.options-list label {
+	cursor: pointer;
 }
 
-.nav-mobile a {
-    color: #fff;
-    padding: 1rem 1.5rem;
-    display: block;
+.question-card-footer {
+	display: flex;
+	justify-content: flex-end;
 }
 
-.home-container {
-    max-width: 1000px;
-    min-height: 480px;
-    width: 90%;
-    margin: 4rem auto 0 auto;
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    box-shadow: 0 6px 24px rgba(13,38,76,0.08);
-    border-radius: 10px;
-    background: rgba(255,255,255,0.8);
+.btn {
+	background: #1d4e98;
+	color: #fff;
+	border: none;
+	padding: 0.6rem 0.9rem;
+	border-radius: 8px;
+	cursor: pointer;
 }
 
-body.home-page {
-    background: linear-gradient(180deg, #f6fbff 0%, #ffffff 40%);
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    color: #08306b;
+.btn-small {
+	padding: 0.4rem 0.6rem;
+	font-size: 0.9rem;
 }
 
-.home-container h1 {
-    margin: 0 0 1.5rem 0;
-    font-size: 2rem;
-    color: #1d4e98;
+.remove-btn {
+	background: #e53e3e;
 }
 
-.chat-area {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    background: #f9fafb;
-    border-radius: 8px;
-    border: 1px solid rgba(29,78,152,0.1);
-    overflow: hidden;
+/* Forçar a mesma fonte dos navigation links desta página (se o arquivo global não carregar) */
+#navigation-links a {
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #1d4e98;
+	text-decoration: underline; /* mantém a barra embaixo das palavras */
 }
 
-.chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+#navigation-links a:hover {
+	color: #15386d;
 }
 
-.chat-input-wrapper {
-    display: flex;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: #f9fafb;
-    border-top: none;
-}
 
-.chat-input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border: 1px solid rgba(29,78,152,0.2);
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    font-family: inherit;
-    transition: border-color 0.2s;
-}
 
-.chat-input:focus {
-    border-color: #1d4e98;
-    box-shadow: 0 0 0 3px rgba(29,78,152,0.1);
-}
-
-.send-btn {
-    padding: 0.75rem 1.2rem;
-    background: #1d4e98;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
-
-.send-btn:hover {
-    background: #15386d;
-}
-
-.send-btn:active {
-    transform: scale(0.95);
-}
-
-/* For simulado page: remove the white card look (use transparent container) */
-body.practice-page .home-container {
-    background: transparent;
-    box-shadow: none;
-    padding: 1rem 0;
-    border-radius: 0;
-    min-height: auto;
-}
-
-.simulado-content {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    text-align: left;
-    background: rgba(255,255,255,0.9);
-    border-radius: 8px;
-}
